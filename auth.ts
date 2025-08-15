@@ -8,6 +8,7 @@ const prisma = new PrismaClient();
 
 export const { auth, handlers, signIn, signOut } = NextAuth({
   ...authConfig,
+  secret:process.env.AUTH_SECRET,
   pages: {
     signIn: "/auth/login",
     error: "/auth/error",
